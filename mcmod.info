@@ -1,0 +1,17 @@
+[
+{
+  "modid": "GreenNekoHaunt_GNHRM",
+  "name": "GNH's Reality Mod",
+  "description": "Mod that adds things from real life to make Minecraft more worthwhile and interesting.",
+  "version": "0.0.2",
+  "mcversion": "1.4.6",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["GreenNekoHaunt"],
+  "credits": "Made by GreenNekoHaunt",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
