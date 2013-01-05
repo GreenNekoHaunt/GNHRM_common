@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.registry.TickRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
 import GNHRM.src.ModCreativeTabGNHRM;
 import GNHRM.src.ModBlocks;

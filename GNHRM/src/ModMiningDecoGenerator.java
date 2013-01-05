@@ -12,17 +12,26 @@ public class ModMiningDecoGenerator
 {
 	public static void generateSurfaceDecoration(World world, Random random, int blockX, int blockZ)
 	{	
+		int oilChance;
+		int mudAmount = 10;
 		BiomeGenBase chunkBiome = world.getBiomeGenForCoords(blockX, blockZ);
-		genDeco(ModBlocks.mud.blockID, 32, 10, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
-		genDeco(ModBlocks.marble.blockID, 48, 10, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
-		if(random.nextInt(20) < 5)
+		if(chunkBiome.biomeID == BiomeGenBase.desert.biomeID) oilChance = 10; else oilChance = 40;
+		
+		if(random.nextInt(oilChance) == 0)
 		{
 			genLiquid(ModBlocks.oilFlowing.blockID, world, random, blockX + random.nextInt(16), random.nextInt(96), blockZ + random.nextInt(16));
 		}
 		if(chunkBiome.biomeID == BiomeGenBase.swampland.biomeID || chunkBiome.biomeID == BiomeGenBase.jungle.biomeID)
-		{
-			genLiquid(ModBlocks.poisonWaterFlowing.blockID, world, random, blockX + random.nextInt(16), random.nextInt(96), blockZ + random.nextInt(16));
+		{	
+			mudAmount = 30;
+			genLiquid(ModBlocks.poisonWaterFlowing.blockID, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
+			for(int var1 = 0; var1 < 3; var1++)
+			{
+				genLiquid(ModBlocks.poisonWaterFlowing.blockID, world, random, blockX + random.nextInt(16), random.nextInt(64), blockZ + random.nextInt(16));
+			}
 		}
+		genDeco(ModBlocks.marble.blockID, 48, 10, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
+		genDeco(ModBlocks.mud.blockID, 32, mudAmount, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
 	}
 	
 	public static void generateNetherDecoration(World world, Random random, int blockX, int blockZ)

@@ -1,10 +1,11 @@
 package GNHRM.src;
 
+//import net.minecraftforge.liquids.IBlockLiquid;
 import net.minecraft.block.BlockStationary;
 import net.minecraft.block.material.Material;
 import GNHRM.GNHRM;
 
-public class ModBlockOilStill extends BlockStationary
+public class ModBlockOilStill extends BlockStationary// implements IBlockLiquid
 {
 	protected ModBlockOilStill()
 	{

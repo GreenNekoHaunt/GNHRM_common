@@ -1,5 +1,6 @@
 package GNHRM.src;
 
+//import net.minecraftforge.liquids.IBlockLiquid;
 import net.minecraft.block.BlockFlowing;
 import net.minecraft.block.material.Material;
 import net.minecraft.potion.Potion;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraft.util.DamageSource;
 import GNHRM.GNHRM;
 
-public class ModBlockPoisonWaterFlowing extends BlockFlowing
+public class ModBlockPoisonWaterFlowing extends BlockFlowing// implements IBlockLiquid
 {
 	protected ModBlockPoisonWaterFlowing()
 	{

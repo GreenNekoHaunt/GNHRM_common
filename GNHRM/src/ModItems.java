@@ -70,8 +70,12 @@ public class ModItems extends Item
 	public static Item rye = new ModItems(0, 14).setItemName("rye");
 	public static Item barley = new ModItems(1, 14).setItemName("barley");
 	public static Item corn = new ModItems(2, 14).setItemName("corn");
-	public static Item bucketOil; // = new ModBucketFilled(15, 16, Item.bucketEmpty, ModBlocks.oilFlowing.blockID, ModBlocks.oilFlowing, ModBlocks.oilStill, ModBlocks.oilFlowing.blockID).setItemName("bucketOil");
-	public static Item bucketPoison; // = new ModBucketFilled(16, 16, Item.bucketEmpty, ModBlocks.poisonWaterFlowing.blockID, ModBlocks.poisonWaterFlowing, ModBlocks.poisonWaterStill, ModBlocks.poisonWaterFlowing.blockID).setItemName("bucketPoison");
+	public static Item currant = new ModItems(3, 14).setItemName("currant");
+	public static Item blackberry = new ModItems(4, 14).setItemName("blackberry");
+	public static Item raspberry = new ModItems(5, 14).setItemName("raspberry");
+	public static Item cherry = new ModItems(6, 14).setItemName("cherry");
+	public static Item bucketOil = new ModItemBucketOil(15, 16).setItemName("bucketOil");
+	public static Item bucketPoison = new ModItemBucketPoison(16, 16).setItemName("bucketPoison");
 	
 	public ModItems()
 	{
@@ -83,9 +87,9 @@ public class ModItems extends Item
 	public ModItems(int x, int y)
 	{
 		super(baseId + itemCount);
+		this.setCreativeTab(GNHRM.tabGNHRM);
 		itemCount++;
 		this.setIconCoord(x, y);
-		this.setCreativeTab(GNHRM.tabGNHRM);
 	}
 	
 	public static void initNames()
@@ -150,8 +154,11 @@ public class ModItems extends Item
 		LanguageRegistry.addName(oat, "Oat");
 		LanguageRegistry.addName(barley, "Barley");
 		LanguageRegistry.addName(corn, "Corn");
-//		LanguageRegistry.addName(bucketOil, "Oil Bucket");
-//		LanguageRegistry.addName(bucketPoison, "Poisononous Water Bucket");
+		LanguageRegistry.addName(bucketOil, "Oil Bucket");
+		LanguageRegistry.addName(bucketPoison, "Poisononous Water Bucket");
+		LanguageRegistry.addName(currant, "Currant");
+		LanguageRegistry.addName(blackberry, "Blackberry");
+		LanguageRegistry.addName(raspberry, "Raspberry");
 	}
 	
 	@Override

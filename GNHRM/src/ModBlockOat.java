@@ -13,13 +13,7 @@ public class ModBlockOat extends ModBlockPlant
 	public ModBlockOat(int texture)
 	{
 		super(texture);
-		this.doNotUseCreativeTab();
 		float f = 0.5F;
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		super.doNotUseCreativeTab();
 	}
 	
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)

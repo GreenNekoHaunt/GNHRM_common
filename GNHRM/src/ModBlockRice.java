@@ -9,20 +9,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.*;
 
 public class ModBlockRice extends ModBlockPlant
 {
 	public ModBlockRice(int texture)
 	{
 		super(texture);
-		this.doNotUseCreativeTab();
 		float f = 0.5F;
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		super.doNotUseCreativeTab();
 	}
 	
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)

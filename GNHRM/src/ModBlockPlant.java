@@ -9,10 +9,6 @@ public class ModBlockPlant extends BlockFlower
 	public ModBlockPlant(int texture)
 	{
 		super(ModBlocks.baseId + ModBlocks.blockCount, texture);
-		if(creativeTab)
-		{
-			this.setCreativeTab(GNHRM.tabGNHRM);
-		}
 		ModBlocks.blockCount++;
 		float f = 0.5F;
 		this.setStepSound(soundGrassFootstep);
@@ -20,11 +16,6 @@ public class ModBlockPlant extends BlockFlower
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
         this.disableStats();
         this.setRequiresSelfNotify();
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		creativeTab = false;
 	}
 
 	public String getTextureFile()

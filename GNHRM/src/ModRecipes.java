@@ -25,8 +25,8 @@ public class ModRecipes
 	{
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.marbleBrick), "xx", "xx", 'x', ModBlocks.marble);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.basaltBrick), "xx", "xx", 'x', ModBlocks.basalt);
-		GameRegistry.addRecipe(new ItemStack(Item.wheat), "xxx", "xxx", "xxx", 'x', ModBlocks.hay);
-		GameRegistry.addRecipe(new ItemStack(ModItems.rye), "xxx", "xxx", "xxx", 'x', ModBlocks.hay);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.hay), "xxx", "xxx", "xxx", 'x', Item.wheat);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.hay), "xxx", "xxx", "xxx", 'x', ModItems.rye);
 		GameRegistry.addRecipe(new ItemStack(Item.bread), "xxx", 'x', ModItems.rye);
 		initOreStorageRecipes();
 		initToolRecipes();
@@ -40,7 +40,7 @@ public class ModRecipes
 		GameRegistry.addSmelting(ModBlocks.oreZinc.blockID, new ItemStack(ModItems.ingotZinc), 0.5F);
 		GameRegistry.addSmelting(ModBlocks.oreSilver.blockID, new ItemStack(ModItems.ingotSilver), 0.8F);
 		GameRegistry.addSmelting(ModBlocks.marbleCobble.blockID, new ItemStack(ModBlocks.marble), 0.1F);
-		GameRegistry.addSmelting(ModBlocks.basaltCobble.blockID, new ItemStack(ModBlocks.marble), 0.1F);
+		GameRegistry.addSmelting(ModBlocks.basaltCobble.blockID, new ItemStack(ModBlocks.basalt), 0.1F);
 	}
 	
 	private static void initOreStorageRecipes()

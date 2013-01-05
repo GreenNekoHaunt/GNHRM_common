@@ -13,13 +13,7 @@ public class ModBlockBarley extends ModBlockPlant
 	public ModBlockBarley(int texture)
 	{
 		super(texture);
-		this.doNotUseCreativeTab();
 		float f = 0.5F;
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		super.doNotUseCreativeTab();
 	}
 	
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)

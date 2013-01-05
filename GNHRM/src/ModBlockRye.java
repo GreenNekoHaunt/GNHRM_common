@@ -13,13 +13,7 @@ public class ModBlockRye extends ModBlockPlant
 	public ModBlockRye(int texture)
 	{
 		super(texture);
-		this.doNotUseCreativeTab();
 		float f = 0.5F;
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		super.doNotUseCreativeTab();
 	}
 	
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)
@@ -55,7 +49,7 @@ public class ModBlockRye extends ModBlockPlant
 	
 	private float getGrowthRate(World par1World, int par2, int par3, int par4)
     {
-        float f = 0.6F;
+        float f = 1.0F;
         int i = par1World.getBlockId(par2, par3, par4 - 1);
         int j = par1World.getBlockId(par2, par3, par4 + 1);
         int k = par1World.getBlockId(par2 - 1, par3, par4);

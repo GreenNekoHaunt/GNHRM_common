@@ -8,12 +8,6 @@ public class ModBlockTallMoss extends ModBlockPlant
 	public ModBlockTallMoss(int texture)
 	{
 		super(texture);
-		this.doNotUseCreativeTab();
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		super.doNotUseCreativeTab();
 	}
 	
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)

@@ -1,10 +1,11 @@
 package GNHRM.src;
 
+//import net.minecraftforge.liquids.IBlockLiquid;
 import net.minecraft.block.BlockFlowing;
 import net.minecraft.block.material.Material;
 import GNHRM.GNHRM;
 
-public class ModBlockOilFlowing extends BlockFlowing
+public class ModBlockOilFlowing extends BlockFlowing// implements IBlockLiquid
 {
 	protected ModBlockOilFlowing()
 	{
@@ -16,6 +17,12 @@ public class ModBlockOilFlowing extends BlockFlowing
 		this.disableStats();
 		this.setRequiresSelfNotify();
 	}
+	
+/*	@Override
+	public NBTTagCompound getLiquidProperties()
+	{
+	
+	}*/
 	
 	@Override
 	public String getTextureFile()
