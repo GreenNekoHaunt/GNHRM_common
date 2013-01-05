@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.registry.TickRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.creativetab.CreativeTabs;
 import GNHRM.src.ModCreativeTabGNHRM;
 import GNHRM.src.ModBlocks;
@@ -19,26 +20,26 @@ import GNHRM.src.ModDungeonLoot;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class GNHRM 
 {
-	public static CreativeTabs tabGNHRM = new ModCreativeTabGNHRM(CreativeTabs.getNextID(), "GNH's Reality Mod");
+    public static CreativeTabs tabGNHRM = new ModCreativeTabGNHRM(CreativeTabs.getNextID(), "GNH's Reality Mod");
 
-	@SidedProxy(clientSide = "GNHRM.ClientProxy", serverSide ="GNHRM.CommonProxy")
-	public static CommonProxy proxy;
-	
-	@Init
-	public void load(FMLInitializationEvent event)
-	{
-		ModEnumToolMaterial.initModEnumToolMaterial();
-		ModBlocks.initBlocks();
-		ModBlocks.initNames();
-		ModBlocks.initHarvestLevel();
-//		MinecraftForge.registerCustomBucketHandler(ModItems.bucketOil);
-//		MinecraftForge.registerCustomBucketHandler(ModItems.bucketPoison);
-		ModItems.initNames();
-		ModRecipes.initShapelessCraftingRecipes();
-		ModRecipes.initShapedCraftingRecipes();
-		ModRecipes.initSmeltingRecipe();
-		ModGenerator.initGenerators();
-		ModDungeonLoot.addDungeonLoot();
-		proxy.registerRenderThings();
-	}
+    @SidedProxy(clientSide = "GNHRM.ClientProxy", serverSide ="GNHRM.CommonProxy")
+    public static CommonProxy proxy;
+    
+    @Init
+    public void load(FMLInitializationEvent event)
+    {
+        ModEnumToolMaterial.initModEnumToolMaterial();
+        ModBlocks.initBlocks();
+        ModBlocks.initNames();
+        ModBlocks.initHarvestLevel();
+//        MinecraftForge.registerCustomBucketHandler(ModItems.bucketOil);
+//        MinecraftForge.registerCustomBucketHandler(ModItems.bucketPoison);
+        ModItems.initNames();
+        ModRecipes.initShapelessCraftingRecipes();
+        ModRecipes.initShapedCraftingRecipes();
+        ModRecipes.initSmeltingRecipe();
+        ModGenerator.initGenerators();
+        ModDungeonLoot.addDungeonLoot();
+        proxy.registerRendering();
+    }
 }

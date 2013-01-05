@@ -9,42 +9,35 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.*;
 
 public class ModBlockRice extends ModBlockPlant
 {
-	public ModBlockRice(int texture)
-	{
-		super(texture);
-		this.doNotUseCreativeTab();
-		float f = 0.5F;
-	}
-	
-	public void doNotUseCreativeTab()
-	{
-		super.doNotUseCreativeTab();
-	}
-	
-	protected boolean canThisPlantGrowOnThisBlockID(int par1)
+    public ModBlockRice(int texture)
+    {
+        super(texture);
+        float f = 0.5F;
+    }
+    
+    protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
         return par1 == Block.tilledField.blockID;
     }
-	
-	public void fertilize(World par1World, int par2, int par3, int par4)
+    
+    public void fertilize(World par1World, int par2, int par3, int par4)
     {
         par1World.setBlockMetadataWithNotify(par2, par3, par4, 5);
     }
-	
-	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         super.updateTick(par1World, par2, par3, par4, par5Random);
 
-		if(par1World.isRaining())
-		{
-			par1World.setBlock(par2, par3, par4, 0);
-			this.dropBlockAsItem(par1World, par2, par3, par4, 0, 0);
-		}
-		
+        if(par1World.isRaining())
+        {
+            par1World.setBlock(par2, par3, par4, 0);
+            this.dropBlockAsItem(par1World, par2, par3, par4, 0, 0);
+        }
+        
         if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9)
         {
             int i = par1World.getBlockMetadata(par2, par3, par4);
@@ -55,39 +48,39 @@ public class ModBlockRice extends ModBlockPlant
 
                 if (par5Random.nextInt((int)(8F / f) + 1) == 0)
                 {
-					if(this.getAdjacentWaterValue(par1World, par2, par3, par4) >= 2)
-					{
-						i++;
-						par1World.setBlockMetadataWithNotify(par2, par3, par4, i);
-					}
+                    if(this.getAdjacentWaterValue(par1World, par2, par3, par4) >= 2)
+                    {
+                        i++;
+                        par1World.setBlockMetadataWithNotify(par2, par3, par4, i);
+                    }
                 }
             }
         }
     }
-	
-	private int getAdjacentWaterValue(World par1World, int x, int y, int z)
+    
+    private int getAdjacentWaterValue(World par1World, int x, int y, int z)
     {
-		int num = 0;
-		if (par1World.getBlockMaterial(x - 1, y - 1, z) == Material.water)
-		{
-			num++;
-		}
-		if (par1World.getBlockMaterial(x + 1, y - 1, z) == Material.water)
-		{
-			num++;
-		}
-		if (par1World.getBlockMaterial(x, y - 1, z + 1) == Material.water)
-		{
-			num++;
-		}
-		if (par1World.getBlockMaterial(x, y - 1, z - 1) == Material.water)
-		{
-			num++;
-		}
+        int num = 0;
+        if (par1World.getBlockMaterial(x - 1, y - 1, z) == Material.water)
+        {
+            num++;
+        }
+        if (par1World.getBlockMaterial(x + 1, y - 1, z) == Material.water)
+        {
+            num++;
+        }
+        if (par1World.getBlockMaterial(x, y - 1, z + 1) == Material.water)
+        {
+            num++;
+        }
+        if (par1World.getBlockMaterial(x, y - 1, z - 1) == Material.water)
+        {
+            num++;
+        }
         return num;
-	}
-	
-	private float getGrowthRate(World par1World, int par2, int par3, int par4)
+    }
+    
+    private float getGrowthRate(World par1World, int par2, int par3, int par4)
     {
         float f = 1.0F;
         int i = par1World.getBlockId(par2, par3, par4 - 1);
@@ -135,8 +128,8 @@ public class ModBlockRice extends ModBlockPlant
 
         return f;
     }
-	
-	public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    
+    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         if (par2 < 0)
         {
@@ -145,27 +138,27 @@ public class ModBlockRice extends ModBlockPlant
 
         return this.blockIndexInTexture + par2;
     }
-	
-	public int getRenderType()
+    
+    public int getRenderType()
     {
         return 6;
     }
-	
-	protected int getSeedItem()
+    
+    protected int getSeedItem()
     {
         return ModItems.rice.shiftedIndex;
     }
 
-	protected int getCropItem()
+    protected int getCropItem()
     {
         return ModItems.rice.shiftedIndex;
     }
-	
-	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
+    
+    public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
     {
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, 0);
     }
-	
+    
     public ArrayList<ItemStack> getBlockDropped(World world, int x, int y, int z, int metadata, int fortune)
     {
         ArrayList<ItemStack> ret = super.getBlockDropped(world, x, y, z, metadata, fortune);
@@ -199,9 +192,9 @@ public class ModBlockRice extends ModBlockPlant
     {
         return this.getSeedItem();
     }
-	
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/plants.png";
-	}
+    
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/plants.png";
+    }
 }

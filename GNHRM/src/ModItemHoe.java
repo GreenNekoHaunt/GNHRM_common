@@ -11,14 +11,14 @@ public class ModItemHoe extends ItemHoe
     public ModItemHoe(int x, int y, EnumToolMaterial par2EnumToolMaterial)
     {
         super(ModItems.baseId + ModItems.itemCount, par2EnumToolMaterial);
-		ModItems.itemCount++;
-		this.setIconCoord(x, y);
-		this.setCreativeTab(GNHRM.tabGNHRM);
+        ModItems.itemCount++;
+        this.setIconCoord(x, y);
+        this.setCreativeTab(GNHRM.tabGNHRM);
     }
-	
-	@Override
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/tools.png";
-	}
+    
+    @Override
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/tools.png";
+    }
 }

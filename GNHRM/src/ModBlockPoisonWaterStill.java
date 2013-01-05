@@ -1,5 +1,6 @@
 package GNHRM.src;
 
+//import net.minecraftforge.liquids.IBlockLiquid;
 import net.minecraft.block.BlockStationary;
 import net.minecraft.block.material.Material;
 import net.minecraft.potion.Potion;
@@ -10,39 +11,39 @@ import net.minecraft.world.World;
 import net.minecraft.util.DamageSource;
 import GNHRM.GNHRM;
 
-public class ModBlockPoisonWaterStill extends BlockStationary
+public class ModBlockPoisonWaterStill extends BlockStationary// implements IBlockLiquid
 {
-	protected ModBlockPoisonWaterStill()
-	{
-		super(ModBlocks.baseId + ModBlocks.blockCount, Material.water);
-		ModBlocks.blockCount++;
-		this.blockHardness = 100F;
+    protected ModBlockPoisonWaterStill()
+    {
+        super(ModBlocks.baseId + ModBlocks.blockCount, Material.water);
+        ModBlocks.blockCount++;
+        this.blockHardness = 100F;
         this.setLightOpacity(2);
         this.setCreativeTab(GNHRM.tabGNHRM);
         this.disableStats();
         this.setRequiresSelfNotify();
-	}
-	
-	@Override
-	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
-    {
-		if(par5Entity instanceof EntityLiving)
-		{
-			if(!((EntityLiving)par5Entity).isPotionActive(Potion.poison))
-			{
-				((EntityLiving)par5Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 1200));
-			}
-			if(((EntityLiving)par5Entity).getHealth() == 1)
-			{
-				par5Entity.attackEntityFrom(DamageSource.magic, 1);
-			}
-		}
-		
     }
-	
-	@Override
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/poison.png";
-	}
+    
+    @Override
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+    {
+        if(par5Entity instanceof EntityLiving)
+        {
+            if(!((EntityLiving)par5Entity).isPotionActive(Potion.poison))
+            {
+                ((EntityLiving)par5Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 1200));
+            }
+            if(((EntityLiving)par5Entity).getHealth() == 1)
+            {
+                par5Entity.attackEntityFrom(DamageSource.magic, 1);
+            }
+        }
+        
+    }
+    
+    @Override
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/poison.png";
+    }
 }
