@@ -13,37 +13,37 @@ import GNHRM.GNHRM;
 
 public class ModBlockPoisonWaterFlowing extends BlockFlowing// implements IBlockLiquid
 {
-	protected ModBlockPoisonWaterFlowing()
-	{
-		super(ModBlocks.baseId + ModBlocks.blockCount, Material.water);
-		ModBlocks.blockCount++;
-		this.blockHardness = 100F;
-		this.setLightOpacity(2);
-		this.setCreativeTab(GNHRM.tabGNHRM);
-		this.disableStats();
-		this.setRequiresSelfNotify();
-	}
-	
-	@Override
-	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+    protected ModBlockPoisonWaterFlowing()
     {
-		if(par5Entity instanceof EntityLiving)
-		{
-			if(!((EntityLiving)par5Entity).isPotionActive(Potion.poison))
-			{
-				((EntityLiving)par5Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 600));
-			}
-			if(((EntityLiving)par5Entity).getHealth() == 1)
-			{
-				par5Entity.attackEntityFrom(DamageSource.magic, 1);
-			}
-		}
-		
+        super(ModBlocks.baseId + ModBlocks.blockCount, Material.water);
+        ModBlocks.blockCount++;
+        this.blockHardness = 100F;
+        this.setLightOpacity(2);
+        this.setCreativeTab(GNHRM.tabGNHRM);
+        this.disableStats();
+        this.setRequiresSelfNotify();
     }
-	
-	@Override
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/poison.png";
-	}
+    
+    @Override
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+    {
+        if(par5Entity instanceof EntityLiving)
+        {
+            if(!((EntityLiving)par5Entity).isPotionActive(Potion.poison))
+            {
+                ((EntityLiving)par5Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 600));
+            }
+            if(((EntityLiving)par5Entity).getHealth() == 1)
+            {
+                par5Entity.attackEntityFrom(DamageSource.magic, 1);
+            }
+        }
+        
+    }
+    
+    @Override
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/poison.png";
+    }
 }

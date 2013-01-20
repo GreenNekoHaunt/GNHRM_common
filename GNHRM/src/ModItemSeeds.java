@@ -9,21 +9,21 @@ public class ModItemSeeds extends ItemSeeds
     public ModItemSeeds(int par2, int par3)
     {
         super(ModItems.baseId + ModItems.itemCount, par2, par3);
-		this.setCreativeTab(GNHRM.tabGNHRM);
-		ModItems.itemCount++;
+        this.setCreativeTab(GNHRM.tabGNHRM);
+        ModItems.itemCount++;
     }
-	
-	public ModItemSeeds(int x, int y, int par2, int par3)
+    
+    public ModItemSeeds(int x, int y, int par2, int par3)
     {
         super(ModItems.baseId + ModItems.itemCount, par2, par3);
-		this.setCreativeTab(GNHRM.tabGNHRM);
-		this.setIconCoord(x, y);
-		ModItems.itemCount++;
+        this.setCreativeTab(GNHRM.tabGNHRM);
+        this.setIconCoord(x, y);
+        ModItems.itemCount++;
     }
-	
-	@Override
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/items.png";
-	}
+    
+    @Override
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/items.png";
+    }
 }

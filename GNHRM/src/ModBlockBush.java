@@ -16,28 +16,28 @@ import java.util.Random;
 
 public class ModBlockBush extends ModBlocks implements IPlantable
 {
-	private Block branchBlock;
-	private Item harvestItem;
-	private int metadata;
-	public ModBlockBush(int texture, Block branchBlockId, Item harvestedItem)
-	{
-		super(texture, Material.plants);
-		branchBlock = branchBlockId;
-		harvestItem = harvestedItem;
-		this.setHardness(0.2F);
-		this.setLightOpacity(1);
-		this.setStepSound(this.soundGrassFootstep);
-		this.setTickRandomly(true);
-		this.disableStats();
+    private Block branchBlock;
+    private Item harvestItem;
+    private int metadata;
+    public ModBlockBush(int texture, Block branchBlockId, Item harvestedItem)
+    {
+        super(texture, Material.plants);
+        branchBlock = branchBlockId;
+        harvestItem = harvestedItem;
+        this.setHardness(0.2F);
+        this.setLightOpacity(1);
+        this.setStepSound(this.soundGrassFootstep);
+        this.setTickRandomly(true);
+        this.disableStats();
         this.setRequiresSelfNotify();
-	}
-	
-	@Override
-	public EnumPlantType getPlantType(World world, int x, int y, int z)
+    }
+    
+    @Override
+    public EnumPlantType getPlantType(World world, int x, int y, int z)
     {
         return Plains;
     }
-	
+    
     @Override
     public int getPlantID(World world, int x, int y, int z)
     {
@@ -49,31 +49,31 @@ public class ModBlockBush extends ModBlocks implements IPlantable
     {
         return world.getBlockMetadata(x, y, z);
     }
-	
-	@Override
-	public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6)
+    
+    @Override
+    public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6)
     {
         super.harvestBlock(par1World, par2EntityPlayer, par3, par4, par5, par6);
     }
-	
-	protected boolean canThisPlantGrowOnThisBlockID(int par1)
+    
+    protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
         return par1 == Block.grass.blockID;
     }
-	
-	public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
+    
+    public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
     {
         return canBlockStay(par1World, par2, par3, par4);
     }
-	
-	public boolean canBlockStay(World par1World, int par2, int par3, int par4)
+    
+    public boolean canBlockStay(World par1World, int par2, int par3, int par4)
     {
         Block soil = blocksList[par1World.getBlockId(par2, par3 - 1, par4)];
         return (par1World.getFullBlockLightValue(par2, par3, par4) >= 4) && 
                 (soil != null && soil.canSustainPlant(par1World, par2, par3 - 1, par4, ForgeDirection.UP, this));
     }
-	
-	protected final void checkFlowerChange(World par1World, int par2, int par3, int par4)
+    
+    protected final void checkFlowerChange(World par1World, int par2, int par3, int par4)
     {
         if (!this.canBlockStay(par1World, par2, par3, par4))
         {
@@ -81,13 +81,13 @@ public class ModBlockBush extends ModBlocks implements IPlantable
             par1World.setBlockWithNotify(par2, par3, par4, 0);
         }
     }
-	
-	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         super.updateTick(par1World, par2, par3, par4, par5Random);
-		
-		int i = par1World.getBlockMetadata(par2, par3, par4);
-		this.checkFlowerChange(par1World, par2, par3, par4);
+        
+        int i = par1World.getBlockMetadata(par2, par3, par4);
+        this.checkFlowerChange(par1World, par2, par3, par4);
 
         if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 4)
         {
@@ -101,15 +101,15 @@ public class ModBlockBush extends ModBlocks implements IPlantable
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, i);
                 }
             }
-			if(i >= 3)
-			{
-				par1World.setBlockAndMetadata(par2, par3, par4, branchBlock.blockID, 2);
-				par1World.scheduleBlockUpdate(par2, par3, par4, branchBlock.blockID, 2);
-			}
+            if(i >= 3)
+            {
+                par1World.setBlockAndMetadata(par2, par3, par4, branchBlock.blockID, 2);
+                par1World.scheduleBlockUpdate(par2, par3, par4, branchBlock.blockID, 2);
+            }
         }
     }
-	
-	private float getGrowthRate(World par1World, int par2, int par3, int par4)
+    
+    private float getGrowthRate(World par1World, int par2, int par3, int par4)
     {
         float f = 1.0F;
         int i = par1World.getBlockId(par2, par3, par4 - 1);
@@ -130,15 +130,15 @@ public class ModBlockBush extends ModBlocks implements IPlantable
             {
                 int k2 = par1World.getBlockId(i2, par3 - 1, j2);
                 float f1 = 0.0F;
-				
-				BiomeGenBase chunkBiome = par1World.getBiomeGenForCoords(par2, par4);
-				
-				if(chunkBiome.biomeID == BiomeGenBase.forest.biomeID 
-					|| chunkBiome.biomeID == BiomeGenBase.jungle.biomeID
-					|| chunkBiome.biomeID == BiomeGenBase.taiga.biomeID)
-				{
-					f1 = 3F;
-				}
+                
+                BiomeGenBase chunkBiome = par1World.getBiomeGenForCoords(par2, par4);
+                
+                if(chunkBiome.biomeID == BiomeGenBase.forest.biomeID 
+                    || chunkBiome.biomeID == BiomeGenBase.jungle.biomeID
+                    || chunkBiome.biomeID == BiomeGenBase.taiga.biomeID)
+                {
+                    f1 = 3F;
+                }
 
                 if (i2 != par2 || j2 != par4)
                 {
@@ -156,8 +156,8 @@ public class ModBlockBush extends ModBlocks implements IPlantable
 
         return f;
     }
-	
-	public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    
+    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         if (par2 < 0)
         {
@@ -166,34 +166,34 @@ public class ModBlockBush extends ModBlocks implements IPlantable
 
         return this.blockIndexInTexture + par2;
     }
-	
-	public boolean isOpaqueCube()
+    
+    public boolean isOpaqueCube()
     {
-		return false;
+        return false;
     }
 
     public boolean renderAsNormalBlock()
     {
-		return false;
+        return false;
     }
-	
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
     {
-		return null;
+        return null;
     }
-	
-	public int getRenderType()
+    
+    public int getRenderType()
     {
-		return 1;
+        return 1;
     }
-	
+    
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return 0;
     }
-	
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/plants.png";
-	}
+    
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/plants.png";
+    }
 }

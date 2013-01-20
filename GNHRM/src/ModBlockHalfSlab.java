@@ -16,7 +16,7 @@ public abstract class ModBlockHalfSlab extends BlockHalfSlab
     public BlockHalfSlab(int texture, boolean par2, Material par3Material)
     {
         super(par1, par2, par3Material);
-		this.blockIndexInTexture = texture;
+        this.blockIndexInTexture = texture;
     }
 
     public int damageDropped(int par1)
@@ -33,7 +33,9 @@ public abstract class ModBlockHalfSlab extends BlockHalfSlab
     @SideOnly(Side.CLIENT)
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return isBlockSingleSlab(this.blockID) ? this.blockID : (this.blockID == Block.stoneDoubleSlab.blockID ? Block.stoneSingleSlab.blockID : (this.blockID == Block.woodDoubleSlab.blockID ? Block.woodSingleSlab.blockID : Block.stoneSingleSlab.blockID));
+        return isBlockSingleSlab(this.blockID) ? this.blockID : (this.blockID == Block.stoneDoubleSlab.blockID 
+        ? Block.stoneSingleSlab.blockID : (this.blockID == Block.woodDoubleSlab.blockID ? Block.woodSingleSlab.blockID
+         : Block.stoneSingleSlab.blockID));
     }
 }
 */

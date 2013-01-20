@@ -11,19 +11,19 @@ public class ModWorldGenMinableCustom extends WorldGenerator
 {
     /** The block ID of the ore to be placed using this generator. */
     private int minableBlockId;
-	private int replaceBlockId;
+    private int replaceBlockId;
     private int metadata;
     private int numberOfBlocks;
 
-	public ModWorldGenMinableCustom(int par1, int par2, int par4)
+    public ModWorldGenMinableCustom(int par1, int par2, int par4)
     {
-		this(par1, par2, 0, par4);
+        this(par1, par2, 0, par4);
     }
-	
+    
     public ModWorldGenMinableCustom(int par1, int par2, int par3, int par4)
     {
         minableBlockId = par1;
-		replaceBlockId = par2;
+        replaceBlockId = par2;
         metadata = par3;
         numberOfBlocks = par4;
     }

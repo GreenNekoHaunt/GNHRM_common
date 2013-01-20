@@ -10,23 +10,23 @@ import java.util.Random;
 
 public class ModBlockOat extends ModBlockPlant
 {
-	public ModBlockOat(int texture)
-	{
-		super(texture);
-		float f = 0.5F;
-	}
-	
-	protected boolean canThisPlantGrowOnThisBlockID(int par1)
+    public ModBlockOat(int texture)
+    {
+        super(texture);
+        float f = 0.5F;
+    }
+    
+    protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
         return par1 == Block.tilledField.blockID;
     }
-	
-	public void fertilize(World par1World, int par2, int par3, int par4)
+    
+    public void fertilize(World par1World, int par2, int par3, int par4)
     {
         par1World.setBlockMetadataWithNotify(par2, par3, par4, 7);
     }
-	
-	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         super.updateTick(par1World, par2, par3, par4, par5Random);
 
@@ -46,8 +46,8 @@ public class ModBlockOat extends ModBlockPlant
             }
         }
     }
-	
-	private float getGrowthRate(World par1World, int par2, int par3, int par4)
+    
+    private float getGrowthRate(World par1World, int par2, int par3, int par4)
     {
         float f = 0.6F;
         int i = par1World.getBlockId(par2, par3, par4 - 1);
@@ -95,8 +95,8 @@ public class ModBlockOat extends ModBlockPlant
 
         return f;
     }
-	
-	public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    
+    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         if (par2 < 0)
         {
@@ -105,27 +105,27 @@ public class ModBlockOat extends ModBlockPlant
 
         return this.blockIndexInTexture + par2;
     }
-	
-	public int getRenderType()
+    
+    public int getRenderType()
     {
         return 6;
     }
-	
-	protected int getSeedItem()
+    
+    protected int getSeedItem()
     {
         return ModItems.oat.shiftedIndex;
     }
 
-	protected int getCropItem()
+    protected int getCropItem()
     {
         return ModItems.oat.shiftedIndex;
     }
-	
-	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
+    
+    public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
     {
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, 0);
     }
-	
+    
     public ArrayList<ItemStack> getBlockDropped(World world, int x, int y, int z, int metadata, int fortune)
     {
         ArrayList<ItemStack> ret = super.getBlockDropped(world, x, y, z, metadata, fortune);
@@ -159,9 +159,9 @@ public class ModBlockOat extends ModBlockPlant
     {
         return this.getSeedItem();
     }
-	
-	public String getTextureFile()
-	{
-	    return "/GNHRM/graphics/plants.png";
-	}
+    
+    public String getTextureFile()
+    {
+        return "/GNHRM/graphics/plants.png";
+    }
 }
