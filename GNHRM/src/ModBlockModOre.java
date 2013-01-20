@@ -20,19 +20,33 @@ public class ModBlockModOre extends ModBlocks
 	public int idDropped(int par1, Random par2Random, int par3)
     {
 		if(this.blockID == ModBlocks.oreUranium.blockID)
-			return ModItems.uranium.shiftedIndex;
+		{
+		   	return ModItems.uranium.shiftedIndex;
+		}
 		else if(this.blockID == ModBlocks.oreRuby.blockID)
-			return ModItems.ruby.shiftedIndex;
+		{
+		    return ModItems.ruby.shiftedIndex;
+		}
 		else if(this.blockID == ModBlocks.oreSapphire.blockID)
-			return ModItems.sapphire.shiftedIndex;
+		{
+		    return ModItems.sapphire.shiftedIndex;
+		}
 		else if(this.blockID == ModBlocks.oreAmethyst.blockID)
-			return ModItems.amethyst.shiftedIndex;
+		{
+		    return ModItems.amethyst.shiftedIndex;
+		}
 		else if(this.blockID == ModBlocks.oreTopaz.blockID)
-			return ModItems.topaz.shiftedIndex;
+		{
+		    return ModItems.topaz.shiftedIndex;
+		}
 		else if(this.blockID == ModBlocks.oreSulphur.blockID)
-			return ModItems.sulphur.shiftedIndex;
+		{
+		    return ModItems.sulphur.shiftedIndex;
+		}
 		else
+		{
 			return this.blockID;
+		}
     }
 	
 	@Override

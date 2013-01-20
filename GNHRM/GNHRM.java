@@ -16,7 +16,7 @@ import GNHRM.src.ModEnumToolMaterial;
 import GNHRM.src.ModGenerator;
 import GNHRM.src.ModDungeonLoot;
 
-@Mod(modid="GreenNekoHaunt_GNHRM", name="GNH's Real Mod", version="0.0.2")
+@Mod(modid="GreenNekoHaunt_GNHRM", name="GNH's Real Mod", version="0.0.3")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class GNHRM 
 {

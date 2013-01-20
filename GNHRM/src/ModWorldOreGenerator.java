@@ -27,12 +27,21 @@ public class ModWorldOreGenerator
 		genOre(ModBlocks.oreSilver.blockID, 8, 8, world, random, blockX + random.nextInt(16), random.nextInt(48), blockZ + random.nextInt(16));
 		genOre(ModBlocks.oreSulphur.blockID, 6, 8, world, random, blockX + random.nextInt(16), (8 + random.nextInt(16)), blockZ + random.nextInt(16));
 		genOre(ModBlocks.oreUranium.blockID, 7, 2, world, random, blockX + random.nextInt(16), (16 + random.nextInt(32)), blockZ + random.nextInt(16));
-		if(chunkBiome.biomeID == BiomeGenBase.extremeHills.biomeID)
+		if(chunkBiome.biomeID == BiomeGenBase.ocean.biomeID)
 		{
-			genOre(ModBlocks.oreRuby.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
-			genOre(ModBlocks.oreSapphire.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
-			genOre(ModBlocks.oreAmethyst.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
+		    genOre(ModBlocks.oreSapphire.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
+		}
+		else if(chunkBiome.biomeID == BiomeGenBase.desert.biomeID)
+		{
+		    genOre(ModBlocks.oreRuby.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
+        }
+		else if(chunkBiome.biomeID == BiomeGenBase.jungle.biomeID)
+		{
 			genOre(ModBlocks.oreTopaz.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
+		}
+		else if(chunkBiome.biomeID == BiomeGenBase.icePlains.biomeID)
+		{
+		    genOre(ModBlocks.oreAmethyst.blockID, 1, (3 + random.nextInt(6)), world, random, blockX + random.nextInt(16), random.nextInt(32), blockZ + random.nextInt(16));
 		}
 	}
 }

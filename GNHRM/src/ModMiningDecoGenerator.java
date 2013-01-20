@@ -31,6 +31,7 @@ public class ModMiningDecoGenerator
 			}
 		}
 		genDeco(ModBlocks.marble.blockID, 48, 10, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
+		genDeco(ModBlocks.granite.blockID, 36, 8, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
 		genDeco(ModBlocks.mud.blockID, 32, mudAmount, world, random, blockX + random.nextInt(16), random.nextInt(128), blockZ + random.nextInt(16));
 	}
 	

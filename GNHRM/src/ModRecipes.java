@@ -19,6 +19,8 @@ public class ModRecipes
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.moss, 1), new ItemStack(ModBlocks.tallMoss, 3), ModBlocks.mud);
 		GameRegistry.addShapelessRecipe(new ItemStack(Block.stoneBrick, 1, 1), new ItemStack(ModBlocks.tallMoss, 3), new ItemStack(Block.stoneBrick, 1, 0));
 		GameRegistry.addShapelessRecipe(new ItemStack(Block.cobblestoneMossy, 1), new ItemStack(ModBlocks.tallMoss, 3), Block.cobblestone);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), ModBlocks.cherryWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.orangePlanks, 4), ModBlocks.orangeWood);
 	}
 	
 	public static void initShapedCraftingRecipes()
