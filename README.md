@@ -9,4 +9,4 @@ You are also allowed to use the custom ideas of this mod as inspiration but not 
 You are not allowed to use the graphics without refering to it's rightful owner.
 
 Developer Team:
-GreenNekoHaunt | Pascal Neubert (a.k.a. YoshisIsland)
+GreenNekoHaunt a.k.a. Pascal Neubert (a.k.a. YoshisIsland)
