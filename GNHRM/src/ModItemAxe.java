@@ -24,7 +24,7 @@ public class ModItemAxe extends ItemTool
     public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
     {
         if(par2Block != null && (par2Block.blockMaterial == Material.wood || par2Block.blockMaterial == Material.plants
-            || par2Block.blockMaterial == Material.vine)
+            || par2Block.blockMaterial == Material.vine))
         {
             return this.efficiencyOnProperMaterial;
         }

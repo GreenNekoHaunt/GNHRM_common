@@ -4,6 +4,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.Block;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ModRecipes
 {
@@ -32,6 +34,8 @@ public class ModRecipes
         GameRegistry.addRecipe(new ItemStack(ModBlocks.hay), "xxx", "xxx", "xxx", 'x', Item.wheat);
         GameRegistry.addRecipe(new ItemStack(ModBlocks.hay), "xxx", "xxx", "xxx", 'x', ModItems.rye);
         GameRegistry.addRecipe(new ItemStack(Item.bread), "xxx", 'x', ModItems.rye);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.burningBasalt), "xyx", "yzy", "xyx", 'x', ModBlocks.basalt, 
+		                       'y', Block.netherrack, 'z', Item.bucketLava);
         initOreStorageRecipes();
         initToolRecipes();
     }

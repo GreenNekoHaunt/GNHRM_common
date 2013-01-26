@@ -45,6 +45,8 @@ public class ModMiningDecoGenerator
     {
         genDecoCustom(ModBlocks.basalt.blockID, Block.netherrack.blockID, 128, 5, world, random, blockX + random.nextInt(16),
                         random.nextInt(256), blockZ + random.nextInt(16));
+        genDecoCustom(ModBlocks.burningBasalt.blockID, Block.netherrack.blockID, 32, 3, world, random,
+                        blockX + random.nextInt(16), random.nextInt(256), blockZ + random.nextInt(16));
     }
     
     private static void genDeco(int blockID, int decoSize, int amount, World world, Random random, int Xcoord, int Ycoord,

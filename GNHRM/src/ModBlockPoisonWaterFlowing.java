@@ -38,7 +38,6 @@ public class ModBlockPoisonWaterFlowing extends BlockFlowing// implements IBlock
                 par5Entity.attackEntityFrom(DamageSource.magic, 1);
             }
         }
-        
     }
     
     @Override

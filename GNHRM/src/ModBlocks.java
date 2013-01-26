@@ -65,6 +65,7 @@ public class ModBlocks extends Block
     public static Block orangePlanks;
     public static Block concrete;
     public static Block granite;
+    public static Block burningBasalt;
 //    public static Block modSapling;
 //    public static Block modLeaves;
 //    public static Block stairBasalt;
@@ -114,6 +115,7 @@ public class ModBlocks extends Block
             .setStepSound(soundStoneFootstep).setBlockName("concrete");
         granite = new ModBlocks(42, Material.rock).setModCreativeTab().setHardness(1.2F).setResistance(6.0F)
             .setStepSound(soundStoneFootstep).setBlockName("granite");
+        burningBasalt = new ModBlockBurningBasalt(50).setModCreativeTab().setBlockName("burningBasalt");
         blockCopper = new ModBlocks(16, Material.iron).setModCreativeTab().setHardness(5.0F).setResistance(10.0F)
             .setStepSound(soundMetalFootstep).setBlockName("blockCopper");
         blockTin = new ModBlocks(17, Material.iron).setModCreativeTab().setHardness(5.0F).setResistance(10.0F)
@@ -219,6 +221,7 @@ public class ModBlocks extends Block
         GameRegistry.registerBlock(basaltBrick);
         GameRegistry.registerBlock(concrete);
         GameRegistry.registerBlock(granite);
+		GameRegistry.registerBlock(burningBasalt);
         GameRegistry.registerBlock(blockCopper);
         GameRegistry.registerBlock(blockTin);
         GameRegistry.registerBlock(blockAluminium);
@@ -275,6 +278,7 @@ public class ModBlocks extends Block
         LanguageRegistry.addName(basaltBrick, "Basalt Brick");
         LanguageRegistry.addName(concrete, "Concrete");
         LanguageRegistry.addName(granite, "Granite");
+		LanguageRegistry.addName(burningBasalt, "Burning Basalt");
         LanguageRegistry.addName(blockCopper, "Block of Copper");
         LanguageRegistry.addName(blockTin, "Block of Tin");
         LanguageRegistry.addName(blockAluminium, "Block of Aluminium");

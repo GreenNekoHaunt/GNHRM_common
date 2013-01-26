@@ -75,7 +75,7 @@ public class ModItemPickaxe extends ItemTool
     public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
     {
         if(par2Block != null && (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.anvil
-         || par2Block.blockMaterial == Material.rock)
+         || par2Block.blockMaterial == Material.rock))
         {
             return this.efficiencyOnProperMaterial;
         }
