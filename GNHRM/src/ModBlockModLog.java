@@ -12,8 +12,6 @@ import net.minecraft.world.World;
 
 public class ModBlockModLog extends ModBlocks
 {
-    public static final String[] woodType = new String[] {"cherry"};
-
     protected ModBlockModLog(int texture)
     {
         super(texture, Material.wood);

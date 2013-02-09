@@ -113,12 +113,12 @@ public class ModBlockBarley extends ModBlockPlant
     
     protected int getSeedItem()
     {
-        return ModItems.barleySeeds.shiftedIndex;
+        return ModItems.barleySeeds.itemID;
     }
 
     protected int getCropItem()
     {
-        return ModItems.barley.shiftedIndex;
+        return ModItems.barley.itemID;
     }
     
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)

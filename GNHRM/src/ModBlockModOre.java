@@ -21,27 +21,27 @@ public class ModBlockModOre extends ModBlocks
     {
         if(this.blockID == ModBlocks.oreUranium.blockID)
         {
-               return ModItems.uranium.shiftedIndex;
+               return ModItems.uranium.itemID;
         }
         else if(this.blockID == ModBlocks.oreRuby.blockID)
         {
-            return ModItems.ruby.shiftedIndex;
+            return ModItems.ruby.itemID;
         }
         else if(this.blockID == ModBlocks.oreSapphire.blockID)
         {
-            return ModItems.sapphire.shiftedIndex;
+            return ModItems.sapphire.itemID;
         }
         else if(this.blockID == ModBlocks.oreAmethyst.blockID)
         {
-            return ModItems.amethyst.shiftedIndex;
+            return ModItems.amethyst.itemID;
         }
         else if(this.blockID == ModBlocks.oreTopaz.blockID)
         {
-            return ModItems.topaz.shiftedIndex;
+            return ModItems.topaz.itemID;
         }
         else if(this.blockID == ModBlocks.oreSulphur.blockID)
         {
-            return ModItems.sulphur.shiftedIndex;
+            return ModItems.sulphur.itemID;
         }
         else
         {

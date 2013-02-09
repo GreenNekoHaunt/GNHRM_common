@@ -113,12 +113,12 @@ public class ModBlockOat extends ModBlockPlant
     
     protected int getSeedItem()
     {
-        return ModItems.oat.shiftedIndex;
+        return ModItems.oat.itemID;
     }
 
     protected int getCropItem()
     {
-        return ModItems.oat.shiftedIndex;
+        return ModItems.oat.itemID;
     }
     
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
