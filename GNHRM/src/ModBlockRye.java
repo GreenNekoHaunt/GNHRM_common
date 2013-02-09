@@ -113,12 +113,12 @@ public class ModBlockRye extends ModBlockPlant
     
     protected int getSeedItem()
     {
-        return ModItems.ryeSeeds.shiftedIndex;
+        return ModItems.ryeSeeds.itemID;
     }
 
     protected int getCropItem()
     {
-        return ModItems.rye.shiftedIndex;
+        return ModItems.rye.itemID;
     }
     
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)

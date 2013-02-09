@@ -75,7 +75,8 @@ public class ModWorldGenMinableCustom extends WorldGenerator
                     {
                         double d14 = (((double)j2 + 0.5D) - d8) / (d10 / 2D);
 
-                        if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && par1World.getBlockId(l1, i2, j2) == replaceBlockId)
+                        if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && i2 < 128
+						    && par1World.getBlockId(l1, i2, j2) == replaceBlockId)
                         {
                             par1World.setBlockAndMetadata(l1, i2, j2, minableBlockId, metadata);
                         }
